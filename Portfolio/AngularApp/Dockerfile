@@ -7,6 +7,7 @@ RUN ["npm", "run", "build"]
 
 
 FROM nginx:1.20.1-alpine
+EXPOSE 4200
 COPY --from=build-step /usr/src/app/dist/AngularApp /usr/share/nginx/html
 
 
